@@ -1,0 +1,72 @@
+{% load static %}
+<section class="home_banner_area rounded">
+    <div id="banner" class="container box_1620">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="bg-success p-1 pt-3">
+                    <p class="text-white text-center">{{ message|safe }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="banner_inner d-flex align-items-center">
+            <div class="banner_content">
+                <div class="media">
+                    <div class="d-flex">
+                        <a href="#" id="name" onmouseover="banner_background_over()"
+                           onmouseout="banner_background_out()" class="profile-picture">
+                            <img width="600px" height="622px" class="rounded"
+                                 src="{{ banner.image.url }}" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="personal_text">
+                            <h6 id="hello">Hello Everybody, i am</h6>
+                            <h1 id="banner_name" class="text-capitalize zizi_title_color">{{ banner.name }}</h1>
+                            <h4 id="banner_degree" class="text-capitalize">{{ banner.degree }}</h4>
+                            <p id="banner_desc">{{ banner.short_desc }}</p>
+                            <ul class="list basic_info">
+                                {% if banner.birthday %}
+                                    <li><a href="" id="banner_birthday"><i
+                                            class="lnr lnr-calendar-full"></i> {{ banner.birthday }}</a>
+                                    </li>
+                                {% endif %}
+
+                                {% if banner.phone_number %}
+                                    <li><a href="" id="banner_phone"><i class="lnr lnr-phone-handset"></i>
+                                        +{{ banner.phone_number }}
+                                    </a>
+                                    </li>
+                                {% endif %}
+
+                                {% if banner.email %}
+                                    <li><a href="" id="banner_email"><i
+                                            class="lnr lnr-envelope"></i> {{ banner.email }}</a></li>
+                                {% endif %}
+                            </ul>
+                            <ul class="list d-flex justify-content-start mt-4">
+                                {% if banner.linkedin_url %}
+                                    <li class="social-icons mr-5"><a href="{{ banner.linkedin_url }}"
+                                                                     target="_blank"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                                {% endif %}
+
+                                {% if banner.telegram_url %}
+                                    <li class="social-icons mr-5"><a href="{{ banner.telegram_url }}"
+                                                                     target="_blank"><i
+                                            class="fa fa-whatsapp text-success"></i></a>
+                                    </li>
+                                {% endif %}
+
+                                {% if banner.instagram_url %}
+                                    <li class="social-icons"><a href="{{ banner.instagram_url }}" target="_blank">
+                                        <i class="fa fa-instagram text-danger"></i></a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

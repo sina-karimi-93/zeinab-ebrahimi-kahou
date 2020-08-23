@@ -1,0 +1,72 @@
+{% extends 'shared/mainlayout.html' %}
+{% load render_partial %}
+{% load static %}
+{% block content %}
+
+    <!--================ Home Banner  =================-->
+    {% include 'home/sections/Banner.html' with banner=banner %}
+    <!--================ End Home Banner  =================-->
+
+    <!--================About  =================-->
+    {% include 'home/sections/About.html' with banner=banner skills=skills languages=languages activities=activities%}
+    <!--================End About  =================-->
+
+    <!--================ My Tabs  =================-->
+    {% include 'home/sections/Experience.html' with experiences=experiences educations=educations %}
+    <!--================ End My Tabs Area =================-->
+
+    <!--================ My Research  =================-->
+    {% include 'home/sections/Research.html' with researches=researches %}
+    <!--================ End My Tabs Area =================-->
+
+    <!--================  Contact =================-->
+    {% include 'home/sections/Contact.html' with form=form %}
+    <!--================ End Contact =================-->
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        function new_div() {
+
+        }
+
+        function banner_background_out() {
+            document.getElementById("banner").className = "container box_1620";
+            document.getElementById("hello").className = '';
+            document.getElementById("banner_name").className = 'text-capitalize zizi_title_color';
+            document.getElementById("banner_degree").className = 'text-capitalize';
+            document.getElementById("banner_desc").className = '';
+            document.getElementById("banner_birthday").className = '';
+            document.getElementById("banner_phone").className = '';
+            document.getElementById("banner_email").className = '';
+
+        }
+
+        function banner_background_over() {
+            document.getElementById("banner").className = 'container box_1620 banner_background';
+            document.getElementById("hello").className = 'banner_text';
+            document.getElementById("banner_name").className = 'text-capitalize banner_text';
+            document.getElementById("banner_degree").className = 'text-capitalize banner_text';
+            document.getElementById("banner_desc").className = 'banner_text';
+            document.getElementById("banner_birthday").className = 'banner_text';
+            document.getElementById("banner_phone").className = 'banner_text';
+            document.getElementById("banner_email").className = 'banner_text';
+        }
+
+        $('#name img').hover(function () {
+            $(this).attr('src', '{{ banner.image_2.url }}');
+        }, function () {
+            $(this).attr('src', '{{ banner.image.url }}');
+        });
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+{% load render_partial %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% include 'shared/_header_links.html' %}
+    <title>Zeinab Ebrahimi</title>
+</head>
+<body class="bg-light">
+<div id="loading"></div>
+{% render_partial 'header' %}
+
+
+{% block content %}{% endblock %}
+
+
+{% render_partial 'footer' %}
+
+{% include 'shared/_footer_links.html' %}
+{% block script %}
+
+{% endblock %}
+
+</body>
+
+</html>

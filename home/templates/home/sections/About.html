@@ -1,0 +1,83 @@
+{% load static %}
+<section id="about" class="container welcome_area p_120 rounded bg-white">
+    <div class="container">
+        <div class="row welcome_inner">
+            <div class="col-lg-6">
+                <div class="">
+                    <div class="d-flex ">
+                        <h1 class="text-dark mr-2 zizi_title_font">About</h1>
+                        <h1 class="zizi_title_color zizi_title_font about-title"> Myself</h1>
+                    </div>
+                    <hr>
+                    <p class="about-p text-dark">{{ banner.about_me }}</p>
+                </div>
+                <div>
+                    <div class="d-flex ">
+                        <h1 class="text-dark mr-2 zizi_title_font"> Interests</h1>
+                    </div>
+                    <hr>
+                    {% for activity in activities %}
+                        <div class="bg-dark text-center mb-2 rounded-circle">
+                            <a class="btn text-white interest" type="button" data-toggle="collapse"
+                               data-target="#e{{ activity.id }}" aria-expanded="false"
+                               aria-controls="collapseExample">
+                                {{ activity.title }}
+                            </a>
+                        </div>
+                        <div class="collapse mb-2" id="e{{ activity.id }}">
+                            {% if activity.desc %}
+                                <div class="p-4 experience-div mt-2">
+                                    <p class="text-white text-center">
+                                        {{ activity.desc }}
+                                    </p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="tools_expert">
+                    <div class="skill_main">
+                        <div class="mb-5">
+                            <h1 class="text-dark zizi_title_font">Skills</h1>
+                            <hr>
+                            {% for skill in skills %}
+                                <div class="skill_item">
+                                    <h4>{{ skill.skill }} <span class="counter">{{ skill.level }}</span>%</h4>
+                                    <div class="progress_br">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar"
+                                                 aria-valuenow="{{ skill.level }}"
+                                                 aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div>
+                            <h1 class="text-dark zizi_title_font">Languages</h1>
+                            <hr>
+                            {% for language in languages %}
+                                <div class="skill_item">
+                                    <h4>{{ language.language }} <span class="counter">{{ language.level }}</span>%
+                                    </h4>
+                                    <div class="progress_br">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar"
+                                                 aria-valuenow="{{ language.level }}"
+                                                 aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
