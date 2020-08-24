@@ -17,12 +17,12 @@
                     </div>
                     <hr>
                     {% for activity in activities %}
-                        <div class="bg-dark text-center mb-2 rounded-circle">
-                            <a class="btn text-white interest" type="button" data-toggle="collapse"
-                               data-target="#e{{ activity.id }}" aria-expanded="false"
-                               aria-controls="collapseExample">
+                        <div class="bg-dark text-center mt-2 rounded-circle">
+                            <button class="btn btn-dark text-white interest" type="button" data-toggle="collapse"
+                                    data-target="#e{{ activity.id }}" aria-expanded="false"
+                                    aria-controls="collapseExample">
                                 {{ activity.title }}
-                            </a>
+                            </button>
                         </div>
                         <div class="collapse mb-2" id="e{{ activity.id }}">
                             {% if activity.desc %}
