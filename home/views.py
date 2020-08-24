@@ -14,7 +14,7 @@ def home(request):
     experiences = MyExperience.objects.order_by('id')
     educations = MyEducation.objects.order_by('id')
     languages = Language.objects.order_by('id')
-    researches = Research.objects.order_by('id')
+    researches = Research.objects.order_by('-id')
     form = ContactForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
