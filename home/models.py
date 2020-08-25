@@ -10,7 +10,7 @@ class Banner(models.Model):
     short_desc = models.TextField(blank=True, null=True, verbose_name='Short Description (optional)')
     about_me = models.TextField(default='Write a description about yourself and your goals', verbose_name='About Me')
     birthday = models.DateField(blank=True, null=True, verbose_name='Birthday Date (optional)')
-    phone_number = models.IntegerField(blank=True, null=True, verbose_name='Phone Number (optional)')
+    phone_number = models.CharField(max_length=12, blank=True, null=True, verbose_name='Phone Number (optional)')
     email = models.EmailField(blank=True, null=True, verbose_name='Email (optional)')
     linkedin_url = models.CharField(max_length=200, blank=True, null=True, verbose_name='LinkedIn Link (optional)')
     telegram_url = models.CharField(max_length=200, blank=True, null=True, verbose_name='Telegram Link (optional)')

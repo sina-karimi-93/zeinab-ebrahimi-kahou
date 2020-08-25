@@ -33,7 +33,7 @@
                                 {% endif %}
 
                                 {% if banner.phone_number %}
-                                    <li><a href="" id="banner_phone"><i class="fa fa-phone-handset"></i>
+                                    <li><a href="" id="banner_phone"><i class="fa fa-phone"></i>
                                         +{{ banner.phone_number }}
                                     </a>
                                     </li>
@@ -42,6 +42,11 @@
                                 {% if banner.email %}
                                     <li><a href="" id="banner_email"><i
                                             class="fa fa-envelope"></i> {{ banner.email }}</a></li>
+                                {% endif %}
+
+                                {% if banner.cv %}
+                                    <li><a target="_blank" href="{{ banner.cv.url }}" id="banner_cv"><i
+                                            class="fa fa-cloud-download"></i> Curriculum Vitae (CV)</a></li>
                                 {% endif %}
                             </ul>
                             <ul class="list d-flex justify-content-start mt-4">
@@ -63,6 +68,9 @@
                                         <i class="fa fa-instagram text-danger"></i></a>
                                     </li>
                                 {% endif %}
+                            </ul>
+                            <ul class="list basic_info mt-3">
+
                             </ul>
                         </div>
                     </div>
